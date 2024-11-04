@@ -40,7 +40,7 @@ Used [Meshroom](https://github.com/alicevision/Meshroom), an open-source softwar
 
 <br>
 <p align="center">
-  <img src="./assets/Meshroom.png" alt="Meshroom" style="width:100%;">
+  <img src="./assets/meshroom.png" alt="Meshroom" style="width:100%;">
 </p>
 <p align="center">
   <span style="font-size: smaller;">

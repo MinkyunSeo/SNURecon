@@ -13,54 +13,25 @@
 </p>
 Seoul National University is situated in a mountainous area, surrounded by numerous natural obstacles, and its buildings are closely situated to each other, which poses significant challenges for photo-based 3D reconstruction. This project explores the conditions necessary for successful reconstruction and examines the current limitations of reconstruction technologies in such complex and densely built environments. Through this study, I aim to identify key factors that contribute to accurate reconstructions and understand the constraints of present-day methods.
 
+
 <br>
 <p align="center">
-  <img src="./assets/28dong.jpg" alt="Figure 3" style="width:80%;">
+  <img src="./assets/28dong.png" alt="Figure 3" style="width:100%;">
 </p>
 <p align="center">
   <span style="font-size: smaller;">
     Target building: 28, Seoul National University
   </span>
 </p>
-
 <br>
-<p align="center">
-  <img src="./assets/tree.jpg" alt="Figure 3" style="width:40%;">
-</p>
-<p align="center">
-  <span style="font-size: smaller;">
-    Obstacles: Trees
-  </span>
-</p>
 
 ## Method
 1. **Data Collection**
 
 **Images**: 1,000 images were collected using a DJI Mavic 3 Pro drone. Both autonomic and manual flight paths were used to capture images from various angles and distances. The drone was flown at an altitude of 30m, with a 80% overlap between images.
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
   <div style="text-align: center;">
-    <img src="./assets/drone.png" alt="DJI Mavic 3 Pro" style="width: 200px;">
+    <img src="./assets/drone.png" alt="DJI Mavic 3 Pro" style="width: 100%;">
   </div>
-
-  <div style="text-align: center;">
-    <img src="./assets/dronepath.png" alt="Autonomous drone flight path" style="width: 400px;">
-    <p style="font-size: smaller; margin-top: 5px;">Autonomous drone flight path</p>
-  </div>
-</div>
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-    <div style="text-align: center;">
-        <img src="./assets/droneimg1.jpg" alt="DJI Mavic 3 Pro" style="width: 200px;">
-    </div>
-    <div style="text-align: center;">
-        <img src="./assets/droneimg2.jpg" alt="DJI Mavic 3 Pro" style="width: 200px;">
-    </div>
-    <div style="text-align: center;">
-        <img src="./assets/droneimg3.jpg" alt="DJI Mavic 3 Pro" style="width: 200px;">
-    </div>
-    <div style="text-align: center;">
-        <img src="./assets/droneimg4.jpg" alt="DJI Mavic 3 Pro" style="width: 200px;">
-    </div>
-</div>
 <br>
 
 2. **Reconstruction**
@@ -78,24 +49,50 @@ Used [Meshroom](https://github.com/alicevision/Meshroom), an open-source softwar
 </p>
 
 
-3. **Results**
+## Results
+
+*	Although it is difficult to capture high-angle (aerial) shots due to limited coverage, expanding the shooting range and shooting angles as much as possible can overcome some challenges.
+
+* When manually controlling drone, it is crucial to maintain continuity between images, which is difficult when obstacles such as trees and walls surround buildings. Maintaining continuity is challenging, and it becomes difficult to match features accurately between the automatic and manual shots, resulting in poor feature matching.
+
+* The mismatch in continuity between automatic and manual captures poses an issue. To address this, would it be possible to merge reconstructions after using Point Cloud Registration?
 
 <br>
 <p align="center">
-  <img src="./assets/Meshroom2.png" alt="Meshroom" style="width:100%;">
+  <img src="./assets/recon.png" alt="Meshroom" style="width:100%;">
 </p>
 <p align="center">
   <span style="font-size: smaller;">
-    Reconstructed Mesh
+    Reconstructed Mesh and Top view
   </span>
 </p>
 
 <br>
 <p align="center">
-  <img src="./assets/top.png" alt="Meshroom" style="width:100%;">
+  <img src="./assets/front.png" alt="front1" style="width:100%;">
 </p>
 <p align="center">
   <span style="font-size: smaller;">
-    Top view
+    Front view
   </span>
 </p>
+
+<br>
+<p align="center">
+  <img src="./assets/side.png" alt="side1" style="width:100%;">
+</p>
+<p align="center">
+  <span style="font-size: smaller;">
+    Side view
+  </span>
+</p>
+
+**Improvement Suggestion**
+
+
+<br>
+<p align="center">
+  <img src="./assets/solution.png" alt="solution" style="width:100%;">
+</p>
+
+One of the key challenges identified in this project is the loss of continuity in the reconstruction process due to obstacles obstructing the view. To address this issue, a potential solution is to separately reconstruct each obstructed area or surface and then merge these reconstructions using point cloud registration. This method would allow for a more complete and continuous 3D model by focusing on individual surfaces impacted by obstacles, followed by a careful alignment and integration with the overall model.

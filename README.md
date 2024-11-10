@@ -1,4 +1,7 @@
 # Seoul National University Lecture Hall 3D Reconstruction
+## Abstract
+
+This project investigates the challenges and limitations of photo-based 3D reconstruction in densely built and obstacle-rich environments. Using a DJI Mavic 3 Pro drone, 1,000 images were captured through both autonomic and manual flight paths, and the 3D reconstruction was performed using Meshroom, an open-source software employing Structure from Motion (SfM) algorithms. The results highlight significant obstacles such as occlusions caused by natural and man-made structures, difficulties in maintaining image continuity during manual flights, and poor feature matching between autonomic and manual captures. To overcome these challenges, a potential improvement is proposed: separately reconstructing obstructed areas and integrating them into the overall model using point cloud registration. This approach aims to enhance the continuity and accuracy of reconstructions in complex urban settings, paving the way for more robust and scalable reconstruction methodologies.
 
 <br>
 <p align="center">
